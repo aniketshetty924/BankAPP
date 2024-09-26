@@ -20,6 +20,8 @@ class Bank {
 
   static getPersonByID(personID) {
     try {
+      if (typeof personID != "number")
+        throw new Error("Enter a valid person ID");
       if (personID < 0) throw new Error("Enter a valid person ID...");
 
       // console.log(Bank.#persons);

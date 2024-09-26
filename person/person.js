@@ -50,6 +50,8 @@ class Person {
   //get specific user account
   getAccountByID(accountID) {
     try {
+      if (typeof accountID != "number")
+        throw new Error("enter a valid account id...");
       if (accountID < 0) throw new Error("enter a valid account iD...");
       let allAccounts = this.accounts;
       for (let account of allAccounts) {
