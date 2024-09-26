@@ -14,6 +14,7 @@ class Bank {
     let person = Person.newPerson(++Bank.#personID, firstName, lastName, age);
 
     Bank.#persons.push(person);
+
     return person;
   }
 
@@ -33,7 +34,16 @@ class Bank {
       console.log(error);
     }
   }
-
+  //create another account by user id
+  static createAnotherAccountByID(personID) {
+    try {
+      let person = Bank.getPersonByID(personID);
+      person.createAnotherAccountByID();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  //create another account directly by user obj
   createAnotherAccount() {
     try {
       let person = this;

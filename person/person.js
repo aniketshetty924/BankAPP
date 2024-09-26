@@ -62,7 +62,20 @@ class Person {
       throw error;
     }
   }
+  //creating another accounty by same user by ID
+  createAnotherAccountByID() {
+    try {
+      if (this.accounts.length > 5)
+        throw new Error(
+          "Sorry 1 user cannot create more than 5 accounts in the same bank!"
+        );
 
+      let account = Account.newAccount(++Person.#accountID);
+      this.accounts.push(account);
+    } catch (error) {
+      throw error;
+    }
+  }
   //creating another account by same user..
   createAnotherAccount() {
     try {

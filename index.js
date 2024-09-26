@@ -42,3 +42,6 @@ console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 console.log(b1);
 Bank.transferWithinSameUserAccounts(1, 2, 1, 500);
 console.log(b1);
+console.log("############################");
+Bank.createAnotherAccountByID(1);
+console.log(b1);
